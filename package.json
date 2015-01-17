@@ -1,0 +1,32 @@
+{
+  "name": "snoocket",
+  "version": "0.0.1",
+  "description": "live reddit threads served via socket.io",
+  "scripts": {
+    "test": "make test"
+  },
+  "author": {
+    "name": "zaim",
+    "url": "https://github.com/zaim"
+  },
+  "main": "index.js",
+  "browser": "client.js",
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "dependencies": {
+    "debug": "^2.1.1",
+    "reddit-emit": "git://github.com/zaim/reddit-emit.git"
+  },
+  "devDependencies": {
+    "browserify": "^8.1.0",
+    "envify": "^3.2.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.1.0",
+    "nock": "^0.56.0",
+    "socket.io": "^1.2.1",
+    "socket.io-client": "^1.2.1"
+  }
+}
