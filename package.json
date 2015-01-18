@@ -13,7 +13,7 @@
   "browser": "client.js",
   "dependencies": {
     "debug": "^2.1.1",
-    "reddit-emit": "git://github.com/zaim/reddit-emit.git"
+    "remmit": "git://github.com/zaim/remmit.git"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

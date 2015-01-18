@@ -1,5 +1,5 @@
 var debug = require('debug')('snoocket:server');
-var Reddit = require('reddit-emit');
+var Reddit = require('remmit');
 
 
 module.exports = plugin;
