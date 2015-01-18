@@ -2,20 +2,29 @@
   "name": "snoocket",
   "version": "0.0.1",
   "description": "live reddit threads served via socket.io",
-  "scripts": {
-    "test": "make test"
-  },
   "author": {
     "name": "zaim",
     "url": "https://github.com/zaim"
   },
   "main": "index.js",
   "browser": "client.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node test/_server.js"
+  },
+  "config": {
+    "test": {
+      "namespace": "snoocket.test",
+      "port": 8888,
+      "mock": false
+    }
+  },
   "dependencies": {
     "debug": "^2.1.1",
     "remmit": "git://github.com/zaim/remmit.git"
   },
   "devDependencies": {
+    "cli-env": "^1.0.10",
     "expect.js": "^0.3.1",
     "mocha": "^2.1.0",
     "nock": "^0.56.0",

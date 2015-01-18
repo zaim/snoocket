@@ -4,12 +4,18 @@ var SocketIO = require('socket.io');
 var nock = require('nock');
 var snoocket = require('../');
 
+var env = require('cli-env')({
+  initialize: true,
+  match: /^npm_/,
+  prefix: 'npm',
+  native: {}
+});
 
-var namespace = process.env.TEST_NAMESPACE || 'snoocket.test';
-var port = process.env.TEST_PORT || 8888;
-var clientID = process.env.TEST_CLIENT_ID || 'testclientid';
-var clientSecret = process.env.TEST_CLIENT_SECRET || 'testclientsecret';
-var mockRequests = process.env.TEST_MOCK_REQUESTS;
+var namespace = env.configTestNamespace || env.packageConfigTestNamespace;
+var port = env.configTestPort || env.packageConfigTestPort;
+var mockRequests = env.configTestMock || env.packageConfigTestMock;
+var clientID = env.configRedditId || 'testclientid';
+var clientSecret = env.configRedditSecret || 'testclientsecret';
 
 
 module.exports = {
@@ -98,6 +104,7 @@ function startServer () {
     createScopes(true);
   }
   createServer().listen(port, function () {
+    console.log('SocketIO namespace is ' + namespace);
     console.log('Server listening at port ' + port);
     console.log('Server PID is ' + process.pid);
   });
