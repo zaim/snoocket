@@ -10,7 +10,7 @@
   "browser": "client.js",
   "scripts": {
     "test": "mocha",
-    "start": "node test/_server.js"
+    "test:server": "node test/_server.js"
   },
   "config": {
     "test": {
